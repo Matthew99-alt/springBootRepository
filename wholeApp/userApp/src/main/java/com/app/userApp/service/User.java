@@ -5,13 +5,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class User {
+public class User { // TODO: Record?
 
-    String userName;
+    private final String userName;
 
-    String userPassword;
+    private final String userPassword;
 
-    public User(String userName, String userPassword){
+    public User(String userName, String userPassword) {
         this.userName = userName;
         this.userPassword = userPassword;
     }

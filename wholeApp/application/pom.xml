@@ -18,7 +18,6 @@
 			<version>2.7.5</version>
 		</dependency>
 
-
         <dependency>
             <groupId>com.app</groupId>
             <artifactId>userApp</artifactId>

@@ -13,7 +13,7 @@ public class UserProperties {
 
     private String userPassword;
 
-    public UserProperties(String userName, String userPassword){
+    public UserProperties(String userName, String userPassword) {
         this.userName = userName;
         this.userPassword = userPassword;
     }

@@ -1,5 +1,7 @@
 package com.app.userApp.service;
 
+import java.util.Objects;
+
 public class UserConfig {
 
     private final User user;
@@ -8,12 +10,13 @@ public class UserConfig {
         this.user = user;
     }
 
-    public void checkUser(String name, String password){
-        if(user.getUserName()==name&&user.getUserPassword()==password){
+    //TODO: вынести, у меня это был Аутентификатор
+    public void checkUser(String name, String password) {
+        if (Objects.equals(user.getUserName(), name) && Objects.equals(user.getUserPassword(), password)) {
             System.out.println("User is authorized, welcome back!");
-        }else{
+        } else {
             System.out.println("Access denied");
         }
-    };
+    }
 
 }

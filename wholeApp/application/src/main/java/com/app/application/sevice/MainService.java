@@ -9,7 +9,7 @@ public class MainService implements CommandLineRunner {
 
     private final UserConfig userConfig;
 
-    public MainService(UserConfig userConfig){
+    public MainService(UserConfig userConfig) {
         this.userConfig = userConfig;
     }
 
