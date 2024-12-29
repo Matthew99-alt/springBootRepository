@@ -26,7 +26,7 @@ public class User { // TODO: Record? Нееее
         if (correctUsers.containsKey(name)) {
             System.out.println("Welcome back, " + name);
         } else {
-            System.out.println("Access denied, user is not found");
+            System.out.println("Access denied, user was not found");
         }
     }
 }
