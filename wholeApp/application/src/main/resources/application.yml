@@ -1,5 +1,3 @@
 auth:
-  userName:
-    stepa
-  userPassword:
-    1109
+  users:
+    stepa: 1109

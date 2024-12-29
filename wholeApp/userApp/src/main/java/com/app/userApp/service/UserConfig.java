@@ -1,19 +1,16 @@
 package com.app.userApp.service;
 
+import lombok.Getter;
+
+import java.util.Map;
+
+@Getter
 public class UserConfig {
 
-    private final User user;
+    private final Map<String, String> users;
 
-    public UserConfig(User user) {
-        this.user = user;
+    public UserConfig(Map<String, String> users) {
+        this.users = users;
     }
-
-    public void checkUser(String name, String password){
-        if(user.getUserName()==name&&user.getUserPassword()==password){
-            System.out.println("User is authorized, welcome back!");
-        }else{
-            System.out.println("Access denied");
-        }
-    };
 
 }

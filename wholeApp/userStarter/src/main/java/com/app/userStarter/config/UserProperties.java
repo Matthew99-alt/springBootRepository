@@ -4,17 +4,18 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@Getter
-@Setter
+import java.util.HashMap;
+
 @ConfigurationProperties(prefix = "auth")
 public class UserProperties {
 
-    private String userName;
+    private HashMap<String, String> users;
 
-    private String userPassword;
+    public HashMap<String, String> getUsers() {
+        return users;
+    }
 
-    public UserProperties(String userName, String userPassword){
-        this.userName = userName;
-        this.userPassword = userPassword;
+    public void setUsers(HashMap<String, String> users) {
+        this.users = users;
     }
 }

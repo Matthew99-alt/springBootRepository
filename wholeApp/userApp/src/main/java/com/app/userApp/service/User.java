@@ -3,16 +3,30 @@ package com.app.userApp.service;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Getter
 @Setter
-public class User {
+public class User { // TODO: Record? Нееее
 
-    String userName;
+    public final UserConfig userConfig;
 
-    String userPassword;
+    public User(UserConfig userConfig) {
+        this.userConfig = userConfig;
+    }
 
-    public User(String userName, String userPassword){
-        this.userName = userName;
-        this.userPassword = userPassword;
+    public void checkUser(String name) {
+        Map<String, String> correctUsers = userConfig.getUsers();
+        if(correctUsers == null || correctUsers.isEmpty()){
+            correctUsers = new HashMap<>();
+
+            correctUsers.put("blablabla", "0000");
+        }
+        if (correctUsers.containsKey(name)) {
+            System.out.println("Welcome back, " + name);
+        } else {
+            System.out.println("Access denied, user is not found");
+        }
     }
 }

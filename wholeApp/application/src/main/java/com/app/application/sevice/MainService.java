@@ -1,20 +1,20 @@
 package com.app.application.sevice;
 
-import com.app.userApp.service.UserConfig;
+import com.app.userApp.service.User;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
 @Service
 public class MainService implements CommandLineRunner {
 
-    private final UserConfig userConfig;
+    private final User user;
 
-    public MainService(UserConfig userConfig){
-        this.userConfig = userConfig;
+    public MainService(User user) {
+        this.user = user;
     }
 
     @Override
     public void run(String... args) {
-        userConfig.checkUser("stepa", "1109");
+        user.checkUser("stepa");
     }
 }

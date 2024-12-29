@@ -18,14 +18,18 @@
 			<version>2.7.5</version>
 		</dependency>
 
-
         <dependency>
             <groupId>com.app</groupId>
             <artifactId>userApp</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-    </dependencies>
+		<dependency>
+			<groupId>com.app</groupId>
+			<artifactId>userStarter</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 
 
 </project>

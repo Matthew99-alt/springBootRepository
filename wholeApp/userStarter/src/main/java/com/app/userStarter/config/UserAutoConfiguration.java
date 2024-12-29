@@ -2,31 +2,35 @@ package com.app.userStarter.config;
 
 import com.app.userApp.service.User;
 import com.app.userApp.service.UserConfig;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.HashMap;
+
 @Configuration
 @EnableConfigurationProperties(UserProperties.class)
 public class UserAutoConfiguration {
+
     private final UserProperties userProperties;
 
-    public UserAutoConfiguration(UserProperties userProperties){
+    public UserAutoConfiguration(UserProperties userProperties) {
         this.userProperties = userProperties;
     }
 
     @Bean
-    public User user(){
-        User newUser = new User(userProperties.getUserName(),userProperties.getUserPassword());
-        if (newUser.getUserName() == null || newUser.getUserPassword() == null){
-            newUser = new User("blablabla","1100");
-        }
+    public User user(UserConfig config) {
+        User newUser = new User(config);
         return newUser;
     }
 
     @Bean
-    public UserConfig userConfig(User user){
-        return new UserConfig(user);
+    public UserConfig userConfig() {
+        HashMap<String, String> credentials = userProperties.getUsers();
+        if(credentials == null || credentials.isEmpty()){
+            credentials = new HashMap<>();
+            credentials.put("root", "0000");
+        }
+        return new UserConfig(credentials);
     }
 }
