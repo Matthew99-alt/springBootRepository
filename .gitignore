@@ -1,0 +1,32 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# IntelliJ IDEA
+.idea
+*.iml
+out/
+target/
+wholeApp/userApp/target/
+wholeApp/userStarter/target/
+wholeApp/application/target/
+
+# Maven
+.target/
+
+# Gradle
+.gradle/
+build/
+
+# Ignore application configuration files that may contain sensitive data
+*.properties
