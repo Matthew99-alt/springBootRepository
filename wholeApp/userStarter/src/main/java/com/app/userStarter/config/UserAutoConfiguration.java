@@ -20,8 +20,7 @@ public class UserAutoConfiguration {
 
     @Bean
     public User user(UserConfig config) {
-        User newUser = new User(config);
-        return newUser;
+        return new User(config);
     }
 
     @Bean
