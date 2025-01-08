@@ -1,3 +1,6 @@
 auth:
   users:
     stepa: 1109
+logging:
+  level:
+    root: DEBUG
