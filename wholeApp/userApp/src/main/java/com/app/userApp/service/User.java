@@ -8,7 +8,8 @@ import java.util.Map;
 
 @Getter
 @Setter
-public class User { // TODO: Record? Нееее
+public class User { // TODO: Record? Нееее - вполне себе может быть да
+    //переименовать, это не пользователь
 
     public final UserConfig userConfig;
 
@@ -18,11 +19,11 @@ public class User { // TODO: Record? Нееее
 
     public void checkUser(String name) {
         Map<String, String> correctUsers = userConfig.getUsers();
-        if(correctUsers == null || correctUsers.isEmpty()){
-            correctUsers = new HashMap<>();
-
-            correctUsers.put("blablabla", "0000");
-        }
+//        if (correctUsers == null || correctUsers.isEmpty()) { - //TODO: эта логика в автоконфигурации, здесь не нужна
+//            correctUsers = new HashMap<>();
+//
+//            correctUsers.put("blablabla", "0000");
+//        }
         if (correctUsers.containsKey(name)) {
             System.out.println("Welcome back, " + name);
         } else {
